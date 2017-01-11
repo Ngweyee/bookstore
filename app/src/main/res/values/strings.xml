@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BookStore</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="country_name">Myanmar</string>
+    <string name="book_name">Book Name :</string>
+    <string name="author_name">Author :</string>
+    <string name="publisher_name">Publisher :</string>
+    <string name="genre_name">Genre :</string>
+    <string name="publishing_date">Publishing Date :</string>
+    <string name="choose_date">Choose Date</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="price">Price</string>
+    <string name="book_add">Add</string>
+    <string name="book_cancel">Cancel</string>
+    <string name="book_quantity">Quantity</string>
+    <string name="book_descriiption">Description :</string>
+    <string name="add_new_book">Adding New Book</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="backdrop_title">Love Books</string>
+    <string name="backdrop_subtitle">This season top 20 books</string>
+
+    <string-array name="genre_array">
+        <item>Science Fiction</item>
+        <item>Biography</item>
+        <item>Romance</item>
+        <item>Comedy</item>
+        <item>Horror</item>
+    </string-array>
+</resources>
