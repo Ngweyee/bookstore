@@ -105,14 +105,13 @@ public class BookAddActivity extends AppCompatActivity implements AdapterView.On
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
 
-
             id = extras.getInt("id");
             book_name.setText(extras.getString("name"));
             book_description.setText(extras.getString("description"));
             author_name.setText(extras.getString("author"));
             //genre_name.setText(extras.getString("genre"));
-            genreName = extras.getString("genre");
-            genre_name.setText(genreName);
+//            genreName = extras.getString("genre");
+//            genre_name.setText(genreName);
             publisher_name.setText(extras.getString("publisher"));
             btn_publishing_date.setText(extras.getString("publishing_date"));
             book_price.setText(extras.getInt("price") + "");
@@ -129,11 +128,11 @@ public class BookAddActivity extends AppCompatActivity implements AdapterView.On
         spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_genre.setAdapter(spinner_adapter);
         spinner_genre.setOnItemSelectedListener(this);
-
-        if (!genreName.isEmpty()) {
-            int spinnerPosition = spinner_adapter.getPosition(genreName);
-            spinner_genre.setSelection(spinnerPosition);
-        }
+//
+//        if (!genreName.isEmpty()) {
+//            int spinnerPosition = spinner_adapter.getPosition(genreName);
+//            spinner_genre.setSelection(spinnerPosition);
+//        }
 
     }
 
@@ -249,7 +248,7 @@ public class BookAddActivity extends AppCompatActivity implements AdapterView.On
     public void showDatePickerDialog(View view) {
 
         DialogFragment dialogFragment = new DatePickerFragment();
-        dialogFragment.show(getSupportFragmentManager(), "Date Picker");
+        dialogFragment.show(getSupportFragmentManager(), "datePicker");
 
     }
 
@@ -292,7 +291,7 @@ public class BookAddActivity extends AppCompatActivity implements AdapterView.On
 
     public void AddBookOnClick(View view) {
         if (!isValidate()) {
-           return;
+            return;
         }
 
         String name = book_name.getText().toString();
@@ -378,9 +377,13 @@ public class BookAddActivity extends AppCompatActivity implements AdapterView.On
             validate = false;
             qty.setError("Error");
         }
-        if(mCurrentImagePath.isEmpty()){
+        if (TextUtils.isEmpty(btn_publishing_date.getText().toString())){
             validate = false;
         }
+        if (preview.getDrawable() == null || mCurrentImagePath.isEmpty()){
+            validate = false;
+            Toast.makeText(this, "Where is your book image???", Toast.LENGTH_SHORT).show();
+    }
         return validate;
     }
 

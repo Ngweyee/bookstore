@@ -168,8 +168,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initCollapsingToolbar() {
 
-
-
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(" ");
